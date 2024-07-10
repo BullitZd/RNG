@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>History</title>
+  <link rel="stylesheet" href="/css/his.css" />
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="../js/his.js"></script>
+</head>
+<body class="bg-gray-200 p-3">
+  <div class="container mx-auto">
+    <% if (history.length === 0) { %>
+      <p class="text-center italic">Belum ada history.</p>
+    <% } else { %>
+      <!-- <div class="text-center mb-10 flex max-w-2xl mx-auto justify-start">
+        <button id="btn-clear-history" class="py-1 px-3 bg-red-500 rounded-lg font-bold text-white hover:bg-red-600 shadow-lg">Clear History</button>
+      </div> -->
+      <% history.forEach((item, index) => { %>
+        <div class="history-item mt-3 p-3 max-w-2xl mx-auto text-center font-bold bg-gray-600 text-white py-5 mt-2 mb-2 shadow-lg" data-index="<%= index %>" style="background-color: <%= item.status === 'true' ? 'green' : item.status === 'false' ? 'red' : 'gray' %>;">
+          <div id="date" class="font-normal text-xs italic"><%= item.formattedTimestamp %></div>
+          <p class="text-xl"><%= item.seed %></p>
+        </div>
+        <div class="overflow-x-auto p-3">
+          <table>
+            <% for (let i = 0; i < item.data2D.length; i += 5) { %>
+              <tr>
+                <% for (let j = i; j < i + 5 && j < item.data2D.length; j++) { %>
+                  <td>
+                    <div class="ball text-center w-8 h-8 rounded-full font-bold p-1 bg-red-500 text-white focus:scale-125 focus:box-shadow transition duration-200"><%= item.data2D[j] %></div>
+                  </td>
+                <% } %>
+              </tr>
+            <% } %>
+            <tr>
+              <td class="p-3 h-10"></td>
+            </tr>
+            <tr>
+              <% for (let i = 0; i < item.data1D.length; i++) { %>
+                <td>
+                  <div class="ball text-center w-8 h-8 rounded-full font-bold p-1 bg-red-500 text-white focus:scale-125 focus:box-shadow transition duration-200"><%= item.data1D[i] %></div>
+                </td>
+              <% } %>
+            </tr>
+          </table>
+        </div>
+        <hr class="border-1 border-black mb-0"></hr>
+        <% if (item.status === 'neutral') { %>
+        <div class="btn-container flex max-w-2xl mx-auto justify-end p-5 overflow-x-auto mb-10 mt-0">
+          <button class="btn-false py-1 px-2 bg-red-500 rounded-lg font-bold text-white hover:bg-red-600 shadow-lg mx-1">Salah</button>
+          <button class="btn-true py-1 px-2 bg-green-500 rounded-lg font-bold text-white hover:bg-green-600 shadow-lg mx-1">Benar</button>
+        </div>
+        <% } %>
+      <% }) %>
+    <% } %>
+  </div>
+</body>
+</html>

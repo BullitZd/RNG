@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Analisid data Seedrandom</title>
+    <link rel="stylesheet" href="css/styles.css" title="" type="" />
+    <script src="//cdnjs.cloudflare.com/ajax/libs/seedrandom/3.0.5/seedrandom.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="js/script.js"></script>
+  </head>
+  <body class="bg-gray-200">
+    <h2 class="text-lg text-center font-bold mt-3">Analisis Data</h2>
+    <!-- Section Input -->
+    <section id="input" class="w-full max-w-xs flex mx-auto mt-2">
+      <input type="number" id="seed" placeholder="Seed" class="p-2 w-full rounded-lg mr-1 shadow-lg focus:ring-2 focus:ring-blue-500 transition duration-200 outline-0" />
+      <button type="button" id="btn-seed" class="px-4 bg-blue-500 text-white font-bold rounded-lg shadow-lg hover:bg-blue-600 transition duration-200">Ok</button>
+    </section>
+    
+    <!-- Section Tabel -->
+    <section id="table" class="p-3 max-w-2xl mx-auto">
+      <div class="overflow-x-auto">
+      <table id="result-table" class="w-full text-center font-bold shadow-lg rounded-lg mt-1">
+          <thead id="table-head" class="bg-gray-600 text-white">
+            <tr>
+              <th class="py-2 px-4">Keluaran</th>
+              <th class="py-2 px-4">Hasil</th>
+              <th class="py-2 px-4">Digit</th>
+              <th class="py-2 px-4"></th>
+            </tr>
+          </thead>
+          <tbody id="table-body">
+            <tr class="bg-gray-200 hover:bg-gray-300 transition duration-200 border-b border-gray-300">
+              <td class="py-2 px-4"></td>
+              <td class="py-2 px-4"></td>
+              <td class="py-2 px-4"></td>
+              <td class="py-2 px-4 text-red-500 cursor-pointer hover:text-red-700 transition duration-200">D</td>
+            </tr>
+            <tr class="bg-gray-300 border-b border-gray-300">
+              <td class="py-2 px-4"></td>
+              <td class="py-2 px-4"></td>
+              <td class="py-2 px-4"></td>
+              <td class="py-2 px-4 text-red-500 cursor-pointer hover:text-red-700 transition duration-200">D</td>
+            </tr>
+            <tr class="bg-gray-200 hover:bg-gray-300 transition duration-200 border-b border-gray-300">
+              <td class="py-2 px-4"></td>
+              <td class="py-2 px-4"></td>
+              <td class="py-2 px-4"></td>
+              <td class="py-2 px-4 text-red-500 cursor-pointer hover:text-red-700 transition duration-200">D</td>
+            </tr>
+            <tr class="bg-gray-300 border-b border-gray-300">
+              <td class="py-2 px-4"></td>
+              <td class="py-2 px-4"></td>
+              <td class="py-2 px-4"></td>
+              <td class="py-2 px-4 text-red-500 cursor-pointer hover:text-red-700 transition duration-200">D</td>
+            </tr>
+            <tr class="bg-gray-200 hover:bg-gray-300 transition duration-200 border-b border-gray-300">
+              <td class="py-2 px-4"></td>
+              <td class="py-2 px-4"></td>
+              <td class="py-2 px-4"></td>
+              <td class="py-2 px-4 text-red-500 cursor-pointer hover:text-red-700 transition duration-200">D</td>
+            </tr>
+            <tr class="bg-gray-300 border-b border-gray-300">
+              <td class="py-2 px-4"></td>
+              <td class="py-2 px-4"></td>
+              <td class="py-2 px-4"></td>
+              <td class="py-2 px-4 text-red-500 cursor-pointer hover:text-red-700 transition duration-200">D</td>
+            </tr>
+            <tr class="bg-gray-200 hover:bg-gray-300 transition duration-200 border-b border-gray-300">
+              <td class="py-2 px-4"></td>
+              <td class="py-2 px-4"></td>
+              <td class="py-2 px-4"></td>
+              <td class="py-2 px-4 text-red-500 cursor-pointer hover:text-red-700 transition duration-200">D</td>
+            </tr>
+            <tr class="bg-gray-300 border-b border-gray-300">
+              <td class="py-2 px-4"></td>
+              <td class="py-2 px-4"></td>
+              <td class="py-2 px-4"></td>
+              <td class="py-2 px-4 text-red-500 cursor-pointer hover:text-red-700 transition duration-200">D</td>
+            </tr>
+            <tr class="bg-gray-200 hover:bg-gray-300 transition duration-200 border-b border-gray-300">
+              <td class="py-2 px-4"></td>
+              <td class="py-2 px-4"></td>
+              <td class="py-2 px-4"></td>
+              <td class="py-2 px-4 text-red-500 cursor-pointer hover:text-red-700 transition duration-200">D</td>
+            </tr>
+            <tr class="bg-gray-300">
+              <td class="py-2 px-4"></td>
+              <td class="py-2 px-4"></td>
+              <td class="py-2 px-4"></td>
+              <td class="py-2 px-4 text-red-500 cursor-pointer hover:text-red-700 transition duration-200">D</td>
+            </tr>
+          </tbody>
+        </table>
+        </div>
+    </section>
+    
+    <!-- Section Predict-->
+    <section id="predict" class="mt-7 p-3 max-w-2xl mx-auto">
+      <h2 class="text-center text-xl font-bold">Prediksi</h2>
+        <div id="" class="text-center font-bold bg-gray-600 text-white py-5 mt-2 mb-2 shadow-lg"><p id="inp-seed" class="text-xl">----</p>
+        <hr class="mx-20 my-2 font-bold">
+        <p id="res-seed" class="">-----------------</p>
+        </div>
+        <div class="overflow-x-auto p-3">
+        <table class="">
+          <tr class="">
+            <th id="jml-2d" class="p-2">--</th>
+            <td><input id="2d-1" type="number" class="2d ball no-cursor text-center w-8 rounded-full font-bold p-1 bg-red-500 text-white focus:scale-125 focus:box-shadow transition duration-200 outline-0"></td>
+            <td><input id="2d-2" type="number" class="2d ball no-cursor text-center w-8 rounded-full font-bold p-1 bg-red-500 text-white focus:scale-125 focus:box-shadow transition duration-200 outline-0"></td>
+            <td><input id="2d-3" type="number" class="2d ball no-cursor text-center w-8 rounded-full font-bold p-1 bg-red-500 text-white focus:scale-125 focus:box-shadow transition duration-200 outline-0"></td>
+            <td><input id="2d-4" type="number" class="2d ball no-cursor text-center w-8 rounded-full font-bold p-1 bg-red-500 text-white focus:scale-125 focus:box-shadow transition duration-200 outline-0"></td>
+            <td><input id="2d-5" type="number" class="2d ball no-cursor text-center w-8 rounded-full font-bold p-1 bg-red-500 text-white focus:scale-125 focus:box-shadow transition duration-200 outline-0"></td>
+            <td><input id="2d-6" type="number" class="2d ball no-cursor text-center w-8 rounded-full font-bold p-1 bg-red-500 text-white focus:scale-125 focus:box-shadow transition duration-200 outline-0"></td>
+          </tr>
+          <tr>
+            <td></td>
+            <td><input id="2d-7" type="number" class="2d ball no-cursor text-center w-8 rounded-full font-bold p-1 bg-red-500 text-white focus:scale-125 focus:box-shadow transition duration-200 outline-0"></td>
+            <td><input id="2d-8" type="number" class="2d ball no-cursor text-center w-8 rounded-full font-bold p-1 bg-red-500 text-white focus:scale-125 focus:box-shadow transition duration-200 outline-0"></td>
+            <td><input id="2d-9" type="number" class="2d ball no-cursor text-center w-8 rounded-full font-bold p-1 bg-red-500 text-white focus:scale-125 focus:box-shadow transition duration-200 outline-0"></td>
+            <td><input id="2d-10" type="number" class="2d ball no-cursor text-center w-8 rounded-full font-bold p-1 bg-red-500 text-white focus:scale-125 focus:box-shadow transition duration-200 outline-0"></td>
+            <td><input id="2d-11" type="number" class="2d ball no-cursor text-center w-8 rounded-full font-bold p-1 bg-red-500 text-white focus:scale-125 focus:box-shadow transition duration-200 outline-0"></td>
+          </tr>
+          <tr>
+            <td></td>
+            <td><input id="2d-12" type="number" class="2d ball no-cursor text-center w-8 rounded-full font-bold p-1 bg-red-500 text-white focus:scale-125 focus:box-shadow transition duration-200 outline-0"></td>
+            <td><input id="2d-13" type="number" class="2d ball no-cursor text-center w-8 rounded-full font-bold p-1 bg-red-500 text-white focus:scale-125 focus:box-shadow transition duration-200 outline-0"></td>
+            <td><input id="2d-14" type="number" class="2d ball no-cursor text-center w-8 rounded-full font-bold p-1 bg-red-500 text-white focus:scale-125 focus:box-shadow transition duration-200 outline-0"></td>
+            <td><input id="2d-15" type="number" class="2d ball no-cursor text-center w-8 rounded-full font-bold p-1 bg-red-500 text-white focus:scale-125 focus:box-shadow transition duration-200 outline-0"></td>
+          </tr>
+          <tr>
+            <td></td>
+            <td><input id="2d-16" type="number" class="2d ball no-cursor text-center w-8 rounded-full font-bold p-1 bg-red-500 text-white focus:scale-125 focus:box-shadow transition duration-200 outline-0"></td>
+            <td><input id="2d-17" type="number" class="2d ball no-cursor text-center w-8 rounded-full font-bold p-1 bg-red-500 text-white focus:scale-125 focus:box-shadow transition duration-200 outline-0"></td>
+            <td><input id="2d-18" type="number" class="2d ball no-cursor text-center w-8 rounded-full font-bold p-1 bg-red-500 text-white focus:scale-125 focus:box-shadow transition duration-200 outline-0"></td>
+          </tr>
+          <tr>
+            <td></td>
+            <td><input id="2d-19" type="number" class="2d ball no-cursor text-center w-8 rounded-full font-bold p-1 bg-red-500 text-white focus:scale-125 focus:box-shadow transition duration-200 outline-0"></td>
+            <td><input id="2d-20" type="number" class="2d ball no-cursor text-center w-8 rounded-full font-bold p-1 bg-red-500 text-white focus:scale-125 focus:box-shadow transition duration-200 outline-0"></td>
+          </tr>
+          <!-- <tr>
+            <td></td>
+            <td><input id="2d-21" type="number" class="2d ball no-cursor text-center w-8 rounded-full font-bold p-1 bg-red-500 text-white focus:scale-125 focus:box-shadow transition duration-200 outline-0"></td>
+          </tr> -->
+          <tr>
+            <td class="p-3"></td>
+          </tr>
+          <tr>
+            <th id="jml-1d" class="p-2">--</th>
+            <td><input id="1d-1" type="number" class="1d maxlength1 ball no-cursor text-center w-8 rounded-full font-bold p-1 bg-red-500 text-white focus:scale-125 focus:box-shadow transition duration-200 outline-0"></td>
+            <td><input id="1d-2" type="number" class="1d maxlength1 ball no-cursor text-center w-8 rounded-full font-bold p-1 bg-red-500 text-white focus:scale-125 focus:box-shadow transition duration-200 outline-0"></td>
+            <td><input id="1d-3" type="number" class="1d maxlength1 ball no-cursor text-center w-8 rounded-full font-bold p-1 bg-red-500 text-white focus:scale-125 focus:box-shadow transition duration-200 outline-0"></td>
+            <td><input id="1d-4" type="number" class="1d maxlength1 ball no-cursor text-center w-8 rounded-full font-bold p-1 bg-red-500 text-white focus:scale-125 focus:box-shadow transition duration-200 outline-0"></td>
+            <td><input id="1d-5" type="number" class="1d maxlength1 ball no-cursor text-center w-8 rounded-full font-bold p-1 bg-red-500 text-white focus:scale-125 focus:box-shadow transition duration-200 outline-0"></td>
+          </tr>
+        </table>
+        </div>
+    </section>
+    
+    <!-- Buttons -->
+    <section id="action" class="p-3">
+      <div class="ct-btn w-full bg-gray-600 flex mx-auto justify-end p-5 max-w-2xl shadow-lg overflow-x-auto">
+        <button id="btn-reset" type="button" class="py-1 px-2 bg-red-500 rounded-lg font-bold text-white hover:bg-red-600 shadow-lg mx-1">Reset</button>
+        <button id="btn-his" type="button" class="py-1 px-2 bg-blue-500 rounded-lg font-bold text-white hover:bg-blue-600 shadow-lg mx-1">Riwayat</button>
+        <button id="btn-save" type="button" class="py-1 px-2 bg-green-500 rounded-lg font-bold text-white hover:bg-green-600 shadow-lg mx-1">Simpan</button>
+      </div>
+    </section>
+    <br /><br /><br /><br /><br />
+  </body>
+</html>
