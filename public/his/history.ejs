@@ -6,23 +6,20 @@
   <title>History</title>
   <link rel="stylesheet" href="/css/his.css" />
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-  <script src="../js/his.js"></script>
+  <script src="/js/his.js"></script>
 </head>
-<body class="bg-gray-200 p-3">
-  <div class="container mx-auto">
+<body class="p-3">
+  <div class="container">
     <% if (history.length === 0) { %>
-      <p class="text-center italic">Belum ada history.</p>
+      <p class="text-center italic mt-3">Belum ada history.</p>
     <% } else { %>
-      <!-- <div class="text-center mb-10 flex max-w-2xl mx-auto justify-start">
-        <button id="btn-clear-history" class="py-1 px-3 bg-red-500 rounded-lg font-bold text-white hover:bg-red-600 shadow-lg">Clear History</button>
-      </div> -->
       <% history.forEach((item, index) => { %>
-        <div class="history-item mt-3 p-3 max-w-2xl mx-auto text-center font-bold bg-gray-600 text-white py-5 mt-2 mb-2 shadow-lg" data-index="<%= index %>" style="background-color: <%= item.status === 'true' ? 'green' : item.status === 'false' ? 'red' : 'gray' %>;">
-          <div id="date" class="font-normal text-xs italic"><%= item.formattedTimestamp %></div>
-          <p class="text-xl"><%= item.seed %></p>
+        <div class="mt-3 p-3 bg-secondary max-w-2xl mx-auto text-center shadow-lg" data-index="<%= index %>" style="background-color: <%= item.status === 'true' ? 'green' : item.status === 'false' ? 'red' : '' %>;">
+          <div id="date" class="text-sm italic text-white"><%= item.date %></div>
+          <p class="text-xl font-bold text-white"><%= item.seed %></p>
         </div>
-        <div class="overflow-x-auto p-3">
-          <table>
+        <div class="mt-5">
+          <table class="">
             <% for (let i = 0; i < item.data2D.length; i += 5) { %>
               <tr>
                 <% for (let j = i; j < i + 5 && j < item.data2D.length; j++) { %>
@@ -44,11 +41,11 @@
             </tr>
           </table>
         </div>
-        <hr class="border-1 border-black mb-0"></hr>
+        <hr class="border-1 border-black mt-3"></hr>
         <% if (item.status === 'neutral') { %>
-        <div class="btn-container flex max-w-2xl mx-auto justify-end p-5 overflow-x-auto mb-10 mt-0">
-          <button class="btn-false py-1 px-2 bg-red-500 rounded-lg font-bold text-white hover:bg-red-600 shadow-lg mx-1">Salah</button>
-          <button class="btn-true py-1 px-2 bg-green-500 rounded-lg font-bold text-white hover:bg-green-600 shadow-lg mx-1">Benar</button>
+        <div class="mt-3 flex max-w-2xl mx-auto justify-end p-5">
+          <button class="btn-false bg-red-500 px-2 py-1 rounded-lg font-bold text-white hover:bg-red-600 transition duration-200 mx-1">Salah</button>
+          <button class="btn-true bg-green-500 px-2 py-1 rounded-lg font-bold text-white hover:bg-green-600 transition duration-200">Benar</button>
         </div>
         <% } %>
       <% }) %>
