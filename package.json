@@ -14,7 +14,8 @@
     "watch:index": "tailwindcss -i ./src/assets/tailwindcss/input.css -o ./public/css/index.css --watch",
     "build:index": "tailwindcss -i ./src/assets/tailwindcss/input.css -o ./public/css/index.css",
     "watch:history": "tailwindcss -i ./src/assets/tailwindcss/input.css -o ./public/css/his.css --watch",
-    "build:history": "tailwindcss -i ./src/assets/tailwindcss/input.css -o ./public/css/his.css"
+    "build:history": "tailwindcss -i ./src/assets/tailwindcss/input.css -o ./public/css/his.css",
+    "start": "node app"
   },
   "keywords": [],
   "author": "",
